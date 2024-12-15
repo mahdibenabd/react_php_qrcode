@@ -24,16 +24,17 @@ This project combines a React front end with PHP backend, utilizing QR codes for
 
 - This will start the React development server on `http://localhost:3000`.
 
-## Installing the PHP Backend
+## Setting Up the PHP Backend
 
-1. **Set up your web server:**
-- If using Apache, you can place your PHP files in the `htdocs` or `www` directory of your web server.
-- If using Nginx, create a new site configuration and link it to your PHP directory.
+1. **Install XAMPP or WAMPServer** if you haven't already:
+   - For XAMPP: Download and install XAMPP from [XAMPP's official website](https://www.apachefriends.org/index.html) and enable Apache in the control panel.
+   - For WAMPServer: Download and install WAMPServer from [WAMPServer's official website](https://www.wampserver.com/en/) and start the server.
 
-2. **Configure the PHP server:**
-- Update the `config.php` file with the necessary database connection details.
+2. **Place your PHP files in the `htdocs` directory** (if using XAMPP) or the `www` directory (if using WAMPServer).
 
-3. **Start your PHP server (if applicable):**
-- For Apache, start the server with `sudo service apache2 start`.
-- For Nginx, you typically don't need to start it as it's always running, but you need to configure the site and check the syntax with `sudo nginx -t`.
+3. **Run your PHP server**:
+   - **For XAMPP**: Start Apache from the XAMPP control panel.
+   - **For WAMPServer**: Start Apache from the WAMPServer control panel.
 
+4. **Update the React app to point to your PHP URL**:
+    - Open `src/App.js` and modify the fetch URL in the fetch request to your PHP URL, replacing `localhost` with your local server if necessary: `const response = await fetch("http://localhost/api/qr_service.php"`
